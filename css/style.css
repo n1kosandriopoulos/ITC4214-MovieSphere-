@@ -334,3 +334,106 @@ footer {
     margin: 0;
 
 }
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+
+/* Theme Toggle Button Hover */
+.theme-toggle-btn:hover {
+
+    color: #e50914;
+    transform: rotate(20deg);
+
+}
+
+/* Light Mode Styles */
+.light-mode {
+
+    background-color: #f5f5f5;
+    color: #121212;
+
+}
+
+/* Navbar */
+.light-mode .navbar {
+
+    background-color:#ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+/* Navigation Links */
+.light-mode .nav-link {
+
+    color: #121212 !important;
+
+}
+
+/* Footer */
+.light-mode footer {
+
+    background-color: #ffffff;
+    color: #121212;
+
+}
+
+/* Movie Cards */
+.light-mode .movie-card {
+
+    background-color: #ffffff;
+    color: #121212;
+
+}
+
+/* Activity Items */
+.light-mode .activity-item {
+
+    background-color: #ffffff;
+    color: #121212;
+
+}
+
+/* Featured Section */
+.light-mode .featured-section {
+
+    background-color: #f5f5f5;
+
+}
+
+/* Activity Section */
+.light-mode .activity-section {
+
+    background-color: #ebebeb;
+
+}
+
+/* Hero Text */
+.light-mode .hero-text {
+
+    color: #f1f1f1;
+
+}
+
+/* Theme Toggle Button in Light Mode */
+.light-mode .theme-toggle-btn {
+
+    color: #121212;
+
+}
+
+/* The Toggle Button Hover in Light Mode */
+.light-mode .theme-toggle-btn:hover {
+
+    color: #e50914;
+
+}
