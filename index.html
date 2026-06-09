@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Website Description-->
+    <meta 
+        name="description" 
+        content="MovieSphere is a movie watchlist platform where users can discover, track, and share their favorite movies and TV shows.">
+
+    <!--Keywords for SEO-->
+    <meta 
+        name="keywords" 
+        content="MovieSphere, movies, TV shows, entertainment, watchlist, reviews, ratings">
+
+    <!--Author-->
+    <meta 
+        name="author" 
+        content="Nikos Andriopoulos">
+
+    <!--Browser Compatibility-->
+    <meta 
+        http-equiv="X-UA-Compatible" 
+        content="IE=edge">
+
+    <!--Search Engine Instructions-->
+    <meta 
+        name="robots"
+        content="index, follow">
+
+    <!--Browser Theme Color-->
+    <meta 
+        name="theme-color" 
+        content="#141414">
+
+    <!--Page Title-->
+    <title>MovieSphere | Home Page</title>
+
+    <!--Bootstrap CSS-->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+
+    <!--Bootstrap Icons-->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <!--Google Font-->
+    <link
+        href="https://fonts.googleapis.com"
+        rel="preconnect">
+
+    <link
+        href="https://fonts.gstatic.com crossorigin"
+        rel="preconnect">
+
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!--Custom CSS-->
+    <link 
+        href="css/style.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top">
+
+        <div class="container">
+
+            <!--Logo-->
+            <a class="navbar-brand fw-bold" href="index.html">
+
+                <img 
+                    src="images/moviesphere-logo.png"
+                    alt="MovieSphere Logo"
+                    class="logo-img">
+
+            </a>
+
+            <!--Hamburger Menu Button-->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!--Navigation Links-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <!--Home-->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+
+                    <!--Watchlist-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="watchlist.html">Watchlist</a>
+                    </li>
+
+                    <!--Analytics-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+
+                    <!--About-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <!--Contact-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--Main Content-->
+    <main>
+
+        <!--Hero Section-->
+        <section class="hero-section">
+
+            <!--Dark Overlay-->
+            <div class="hero-overlay">
+
+                <div class="container">
+
+                    <div class="row align-items-center min-vh-100">
+
+                        <!--Hero Text-->
+                        <div class="col-lg-6">
+
+                            <h1 class="hero-title">Discover Your Next Favorite Movie</h1>
+
+                            <p class="hero-text">
+                                MovieSphere is your ultimate movie watchlist platform. 
+                                Discover, track, and share your favorite movies and TV shows all in one place.
+                            </p>
+
+                            <!--Call to Action Button-->
+                            <a href="watchlist.html" class="hero-btn">Explore Watchlist</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--Featured Movies-->
+        <section class="featured-section">
+
+            <div class="container">
+
+                <!--Section Title-->
+                <div class="section-heading">
+
+                    <h2 class="featured-title">Featured Movies</h2>
+                    <p class="featured-subtitle">Explore our selection of top-rated movies</p>
+
+                </div>
+
+                <!--Movie Cards-->
+                <div class="row g-4">
+
+                    <!--Movie Card 1-->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="movie-card">
+
+                            <img
+                                src="images/movie1.png"
+                                alt="Movie Poster"
+                                class="movie-img">
+
+                            <div class="movie-content">
+
+                                <h3 class="movie-name">Interstellar</h3>
+                                <p class="movie-genre">Sci-Fi | Adventure</p>
+                                <span class="movie-rating">8.7/10 IMDb</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <!--Movie Card 2-->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="movie-card">
+
+                            <img
+                                src="images/movie2.png"
+                                alt="Movie Poster"
+                                class="movie-img">
+
+                            <div class="movie-content">
+
+                                <h3 class="movie-name">The Dark Knight</h3>
+                                <p class="movie-genre">Action | Crime</p>
+                                <span class="movie-rating">9.0/10 IMDb</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <!--Movie Card 3-->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="movie-card">
+
+                            <img
+                                src="images/movie3.png"
+                                alt="Movie Poster"
+                                class="movie-img">
+
+                            <div class="movie-content">
+
+                                <h3 class="movie-name">Inception</h3>
+                                <p class="movie-genre">Sci-Fi | Thriller</p>
+                                <span class="movie-rating">8.8/10 IMDb</span>
+
+                            </div>
+
+                        </div>
+                
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--Latest Activity Section-->
+        <section class="activity-section">
+
+            <div class="container">
+
+                <!--Section Heading-->
+                <div class="section-heading">
+
+                    <h2 class="featured-title">Latest Activity</h2>
+                    <p class="featured-subtitle">Stay updated with your latest movie interactions!</p>
+
+                </div>
+
+                <!--Activity List-->
+                <div class="activity-container">
+
+                    <!--Activity Item 1-->
+                    <div class="activity-item">
+
+                        <i class="bi bi-bookmark-check-fill activity-icon"></i>
+
+                        <div>
+
+                            <h4 class="activity-title">Added Interstellar to Watchlist</h4>
+                            <p class="activity-time">2 hours ago</p>
+
+                        </div>
+
+                    </div>
+
+                    <!--Activity Item 2-->
+                    <div class="activity-item">
+
+                        <i class="bi bi-star-fill activity-icon"></i>
+
+                        <div>
+
+                            <h4 class="activity-title">Rated Inception 5 stars</h4>
+                            <p class="activity-time">Yesterday</p>
+
+                        </div>
+
+                    </div>
+
+                    <!--Activity Item 3-->
+                    <div class="activity-item">
+
+                        <i class="bi bi-film activity-icon"></i>
+
+                        <div>
+
+                            <h4 class="activity-title">Watched The Dark Knight</h4>
+                            <p class="activity-time">3 days ago</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--Footer-->
+    <footer>
+
+        <div class="container">
+
+            <p class="mb-2">&copy; © 2026 MovieSphere | All Rights Reserved.</p>
+
+            <!--Social Media Links-->
+            <div class="social-icons">
+
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-youtube"></i>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!--Bootstrap JS-->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!--Main JS-->
+    <script 
+        src="js/main.js">
+    </script>
+    
+
+</body>
+
+</html>
