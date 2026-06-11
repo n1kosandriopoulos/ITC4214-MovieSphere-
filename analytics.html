@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Website Description-->
+    <meta 
+        name="description" 
+        content="MovieSphere Analytics lets users view insights and statistics about their saved movies and watchlist activity.">
+
+    <!--Keywords for SEO-->
+    <meta 
+        name="keywords" 
+        content="MovieSphere, analytics, movies, TV shows, entertainment, movie statistics, charts">
+
+    <!--Author-->
+    <meta 
+        name="author" 
+        content="Nikos Andriopoulos">
+
+    <!--Browser Compatibility-->
+    <meta 
+        http-equiv="X-UA-Compatible" 
+        content="IE=edge">
+
+    <!--Search Engine Instructions-->
+    <meta 
+        name="robots"
+        content="index, follow">
+
+    <!--Browser Theme Color-->
+    <meta 
+        name="theme-color" 
+        content="#141414">
+
+    <!--Page Title-->
+    <title>MovieSphere | Analytics</title>
+
+    <!--Bootstrap CSS-->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+
+    <!--Bootstrap Icons-->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <!--Google Font-->
+    <link
+        href="https://fonts.googleapis.com"
+        rel="preconnect">
+
+    <link
+        href="https://fonts.gstatic.com"
+        rel="preconnect">
+
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!--Custom CSS-->
+    <link 
+        href="css/style.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top">
+
+        <div class="container">
+
+            <!--Logo-->
+            <a class="navbar-brand fw-bold" href="index.html">
+
+                <img src="images/moviesphere-logo.png"
+                     alt="MovieSphere Logo"
+                     class="logo-img">
+
+            </a>
+
+            <!--Hamburger Menu Button-->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                
+                <span class="navbar-toggler-icon"></span>
+                    
+            </button>
+            
+            <!--Navigation Links-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <!--Home-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <!--Watchlist-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="watchlist.html">Watchlist</a>
+                    </li>
+
+                    <!--Analytics-->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="analytics.html">Analytics</a>
+                    </li>
+
+                    <!--About-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <!--Contact-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                    <!--Theme Toggle Button-->
+                    <li class="nav-item">
+
+                        <button class="theme-toggle-btn" type="button">
+
+                            <i class="bi bi-sun-fill"></i>
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--Main Content-->
+    <main>
+
+        <!--Analytics Section-->
+        <section class="analytics-section container py-5">
+
+            <!--Page Title-->
+            <h1 class="analytics-title text-center mb-5">Movie Analytics</h1>
+
+            <!--Statistics Cards-->
+            <div class="stats-container">
+
+                <!--Total Movies-->
+                <div class="stat-card">
+
+                    <h3>Total Movies</h3>
+                    <p id="totalMovies">0</p>
+
+                </div>
+
+                <!--Average Rating-->
+                <div class="stat-card">
+
+                    <h3>Average Rating</h3>
+                    <p id="averageRating">0</p>
+
+                </div>
+
+                <!--Highest Rated-->
+                <div class="stat-card">
+
+                    <h3>Highest Rated</h3>
+                    <p id="highestRated">N/A</p>
+
+                </div>
+
+                <!--Lowest Rated-->
+                <div class="stat-card">
+
+                    <h3>Lowest Rated</h3>
+                    <p id="lowestRated">N/A</p>
+
+                </div>
+
+            </div>
+
+            <!--Charts Container-->
+            <div class="charts-container">
+
+                <!--Ratings Chart-->
+                <div class="chart-card">
+
+                    <canvas id="ratingsChart"></canvas>
+
+                </div>
+                
+                <!--Genres Chart-->
+                <div class="chart-card">
+
+                    <canvas id="genresChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+        
+    </main>
+
+    <!--Footer-->
+    <footer>
+
+        <div class="container">
+
+            <p class="mb-2">&copy; 2026 MovieSphere | All Rights Reserved.</p>
+
+            <!--Social Media Links-->
+            <div class="social-icons">
+
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-youtube"></i>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!--Bootstrap JS-->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!--chart.js-->
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js">
+    </script>
+
+    <!--API JS-->
+    <script 
+        src="js/api.js">
+    </script>
+
+    <!--Dark Mode JS-->
+    <script
+        src="js/darkmode.js">
+    </script>
+
+    <!--Analytics JS-->
+    <script 
+        src="js/analytics.js">
+    </script>
+
+</body>
+
+</html>

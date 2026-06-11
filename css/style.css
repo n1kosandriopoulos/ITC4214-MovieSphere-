@@ -730,3 +730,91 @@ body:not(.light-mode) .movie-card {
     background-color: #1a1a1a;
 
 }
+
+/* Analytics Section */
+.analytics-section {
+
+    min-height: 100vh;
+
+}
+
+/* Statistics Container */
+.stats-container {
+
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+
+}
+
+/* Statistics Card */
+.stat-card {
+
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Statistics Numbers */
+.stat-card p {
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e50914;
+
+}
+
+/* Charts Container */
+.charts-container {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+
+}
+
+/* Chart Cards */
+.chart-card {
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Analytics in Dark Mode */
+body:not(.light-mode) .stat-card,
+body:not(.light-mode) .chart-card {
+
+    background-color: #1a1a1a;
+    color: white;
+
+}
+
+/* Clear Watchlist Button */
+.clear-watchlist-btn {
+
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+/* Clear Watchlist Button Hover */
+.clear-watchlist-btn:hover {
+
+    background-color: #b20710;
+
+}

@@ -3,6 +3,7 @@ const searchInput = document.querySelector(".movie-search-input");
 const searchButton = document.querySelector(".search-btn");
 const resultsContainer = document.querySelector(".movie-results-container");
 const savedMoviesContainer = document.querySelector(".saved-movies-container");
+const clearWatchlistButton = document.querySelector(".clear-watchlist-btn");
 const SEARCH_URL = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=`;
 
 let currentMovies = [];
@@ -157,6 +158,27 @@ function removeMovie(movieId) {
 
 }
 
+//Clear Watchlist function
+function clearWatchlist() {
+
+    //Confirmation Message
+    const confirmClear = confirm("Are you sure you want to clear your watchlist?");
+
+    //Check user's choice
+    if (!confirmClear) {
+
+        return;
+
+    }
+
+    //Clear localStorage
+    localStorage.removeItem("savedMovies");
+
+    //Refresh UI
+    displaySavedMovies();
+
+}
+
 //Display Saved Movies function
 function displaySavedMovies() {
 
@@ -233,3 +255,6 @@ searchInput.addEventListener("keypress", function(event) {
 console.log("watchlist.js loaded")
 
 displaySavedMovies();
+
+//Clear Watchlist Button Event
+clearWatchlistButton.addEventListener("click", clearWatchlist);

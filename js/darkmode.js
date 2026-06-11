@@ -47,6 +47,9 @@ themeToggleButton.addEventListener("click", () => {
 
     }
 
+    //Reload page for correct charts display
+    location.reload();
+
 });
 
 
