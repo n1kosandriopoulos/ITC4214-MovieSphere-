@@ -818,3 +818,82 @@ body:not(.light-mode) .chart-card {
     background-color: #b20710;
 
 }
+
+/* About Section */
+.about-section {
+
+    max-width: 900px;
+
+}
+
+/* About Title */
+.about-title {
+
+    font-size: 3rem;
+    font-weight: 700;
+
+}
+
+/* About Description */
+.about-description {
+
+    font-size: 1.2rem;
+    line-height: 1.8;
+
+}
+
+/* Section Titles */
+.section-title {
+
+    font-size: 2.3rem;
+    font-weight: 600;
+
+}
+
+/* Carousel Images */
+.carousel-image {
+
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+
+}
+
+/* Team Members Cards */
+.team-card {
+
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+}
+
+/* Team Members Cards Hover */
+.team-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+/* Team Images */
+.team-image {
+
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+
+}
+
+/* Team Members Cards in Dark Mode */
+body:not(.light-mode) .team-card {
+
+    background-color: #1a1a1a;
+    color: white;
+
+}
