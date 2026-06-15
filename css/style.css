@@ -632,6 +632,49 @@ footer {
 
 }
 
+/* Watched Movies Button */
+.watch-btn {
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #ff3c00;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.3s;
+
+}
+
+/* Watched Movies Button Hover */
+.watch-btn:hover {
+
+    background-color: #cc3000;
+
+}
+
+/* Watched Movies Style */
+.watched-movie {
+
+    opacity: 0.8;
+    border: 3px solid #ff3c00;
+
+}
+
+/* Empty Message */
+.empty-message {
+
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 50px;
+    color: #ff3c00;
+
+}
+
 /* Watchlist Title in Light Mode */
 .light-mode .watchlist-title,
 .light-mode .saved-movies-title {
@@ -691,18 +734,55 @@ body.light-mode .movie-card p {
     background-color: #ff3c00;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 6px;
     margin-top: 10px;
     cursor: pointer;
     transition: 0.3s; 
+    font-weight: bold;
 
 }
 
 /* Remove Button Hover */
 .remove-btn:hover {
 
-    background-color: #cc2f00;
+    background-color: #cc3000;
+
+}
+
+/* Filter Buttons */
+.filter-buttons {
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+
+}
+
+.filter-btn {
+
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #222;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+
+    background-color: #ff3c00;
+
+}
+
+/* Active Filter */
+.active-filter {
+
+    background-color: #ff3c00;
 
 }
 
@@ -895,5 +975,181 @@ body:not(.light-mode) .team-card {
 
     background-color: #1a1a1a;
     color: white;
+
+}
+
+/* Contact Section */
+.contact-section {
+
+    min-height: 100vh;
+
+}
+
+/* Contact Title */
+.contact-title {
+
+    font-size: 3rem;
+    font-weight: 700;
+
+}
+
+/* Contact Description */
+.contact-description {
+
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+}
+
+/* Contact Card */
+.contact-card, 
+.contact-info-card {
+
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    height: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Form Labels */
+.form-label {
+
+    font-weight: 500;
+
+}
+
+/* Form Inputs */
+.form-control {
+
+    padding: 12px;
+    border-radius: 8px;
+
+}
+
+/* Text Area */
+textarea.form-control {
+
+    resize: none;
+
+}
+
+/* Submit Button */
+.submit-btn {
+
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
+
+}
+
+/* Submit Button Hover */
+.submit-btn:hover {
+
+    background-color: #b20710;
+
+}
+
+/* Success Message */
+.success-message {
+
+    font-weight: 600;
+
+}
+
+/* Contact Information Icons */
+.contact-info-card i {
+
+    color: #e50914;
+    margin-right: 10px;
+
+}
+
+/* Map Container */
+.map-container iframe {
+
+    border-radius: 12px;
+
+}
+
+/* Social Media Icons */
+.contact-social-icons {
+
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+
+}
+
+/* Social Media Links */
+.contact-social-icons a {
+
+    color: #e50914;
+    transition: 0.3s;
+
+}
+
+/* Social Media Links Hover */
+.contact-social-icons a:hover {
+
+    transform: scale(1.1);
+
+}
+
+/* Contact Page Cards in Dark Mode */
+body:not(.light-mode) .contact-card,
+body:not(.light-mode) .contact-info-card {
+
+    background-color: #1a1a1a;
+    color: white;
+
+} 
+
+/* Contact Page Inputs in Dark Mode */
+body:not(.light-mode) .form-control {
+
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+
+}
+
+/* Contact Page Placeholders in Dark Mode */
+body:not(.light-mode) .form-control::placeholder {
+
+    color: #cccccc;
+
+}
+
+/* Contact Page Inputs Focus in Dark Mode */
+body:not(.light-mode) .form-control:focus {
+
+    background-color: #2a2a2a;
+    color: white;
+    border-color: #e50914;
+    box-shadow: none;
+
+}
+
+/* Contact Page Responsive Design */
+@media (max-width: 768px) {
+
+    .contact-title {
+
+        font-size: 2.3rem;
+
+    }
+
+    .contact-social-icons {
+
+        justify-content: center;
+
+    }
 
 }

@@ -1,29 +1,6 @@
 //Get Saved Movies
 const savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
 
-//Genre map
-const genreMap = {
-
-    28: "Action",
-    12: "Adventure",
-    16: "Animation",
-    35: "Comedy",
-    80: "Crime",
-    99: "Documentary",
-    18: "Drama",
-    10751: "Family",
-    14: "Fantasy",
-    36: "History",
-    27: "Horror",
-    10402: "Music",
-    9648: "Mystery",
-    10749: "Romance",
-    878: "Sci-Fi",
-    53: "Thriller",
-    10752: "War"
-
-};
-
 //Statistics Elements
 const totalMovies = document.querySelector("#totalMovies");
 const averageRating = document.querySelector("#averageRating");
@@ -210,13 +187,11 @@ function createGenresChart() {
 
     savedMovies.forEach(movie => {
 
-        if (movie.genre_ids) {
+        if (movie.genre_names) {
 
-            movie.genre_ids.forEach(id => {
+            movie.genre_names.forEach(genre => {
 
-                const genreName = genreMap[id] || "Other";
-
-                genreCount[genreName] = (genreCount[genreName] || 0) + 1;
+                genreCount[genre] = (genreCount[genre] || 0) + 1;
 
             });
 

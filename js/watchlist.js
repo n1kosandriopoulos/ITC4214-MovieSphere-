@@ -4,9 +4,11 @@ const searchButton = document.querySelector(".search-btn");
 const resultsContainer = document.querySelector(".movie-results-container");
 const savedMoviesContainer = document.querySelector(".saved-movies-container");
 const clearWatchlistButton = document.querySelector(".clear-watchlist-btn");
+const filterButtons = document.querySelectorAll(".filter-btn");
 const SEARCH_URL = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=`;
 
 let currentMovies = [];
+let currentFilter = "all";
 
 //Search  Movies Function
 async function searchMovies() {
@@ -108,7 +110,6 @@ function displayMovies(movies) {
 
 }
 
-
 //Save Movie function
 function saveMovie(movieId) {
 
@@ -128,8 +129,43 @@ function saveMovie(movieId) {
     //Find selected movie
     const selectedMovie = currentMovies.find(movie => movie.id === movieId);
 
-    //Add movie 
-    savedMovies.push(selectedMovie);
+    //Genre Map
+    const genreMap = {
+
+        28: "Action",
+        12: "Adventure",
+        16: "Animation",
+        35: "Comedy",
+        80: "Crime",
+        18: "Drama",
+        14: "Fantasy",
+        27: "Horror",
+        9648: "Mystery",
+        10749: "Romance",
+        878: "Sci-Fi",
+        53: "Thriller"
+
+    };
+    
+    //Convert IDs to names for pie chart
+    const genreNames = selectedMovie.genre_ids
+        .map(id => genreMap[id])
+        .filter(Boolean);
+    
+    //Create custom movie object 
+    const movieData = {
+
+        id: selectedMovie.id,
+        title: selectedMovie.title,
+        poster_path: selectedMovie.poster_path,
+        genre_names: genreNames,
+        vote_average: selectedMovie.vote_average,
+        watched: false
+
+    };
+
+    //Add movie
+    savedMovies.push(movieData);
 
     //Save to localStorage
     localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
@@ -185,6 +221,52 @@ function displaySavedMovies() {
     //Get saved movies
     const savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
 
+    //Filtering
+    let filteredMovies = savedMovies;
+
+    if (currentFilter === "watched") {
+
+        filteredMovies = savedMovies.filter(movie => movie.watched);
+
+    }
+
+    else if (currentFilter === "unwatched") {
+
+        filteredMovies = savedMovies.filter(movie => !movie.watched);
+
+    }
+
+    //Empty Filter States
+    if (filteredMovies.length === 0) {
+
+        let message = "";
+
+        if (currentFilter === "watched") {
+
+
+            message = "No watched movies yet.";
+        }
+
+        else if (currentFilter === "unwatched") {
+
+            message = "No unwatched movies yet.";
+
+        }
+
+        savedMoviesContainer.innerHTML = `
+
+            <p class="empty-message">
+
+                ${message}
+
+            </p>
+
+        `;
+
+        return;
+
+    }
+
     //Clear container
     savedMoviesContainer.innerHTML = "";
 
@@ -203,11 +285,22 @@ function displaySavedMovies() {
 
     }
 
+    //Alphabetical Sorting
+    filteredMovies.sort((a, b) => a.title.localeCompare(b.title));
+
     //Loop through movies
-    savedMovies.forEach(movie => {
+    filteredMovies.forEach(movie => {
 
         const movieCard = document.createElement("div");
         movieCard.classList.add("movie-card");
+
+        //Watched Movies
+        if (movie.watched) {
+
+            movieCard.classList.add("watched-movie");
+
+        }
+
         movieCard.innerHTML = `
 
             <img 
@@ -220,6 +313,13 @@ function displaySavedMovies() {
                 
                 <p>⭐ ${movie.vote_average.toFixed(1)}</p>
 
+                <button
+                    class="watch-btn">
+
+                    ${movie.watched ? "Watched" : "Mark as Watched"}
+
+                </button>   
+
                 <button 
                     class="remove-btn"
                     onclick="removeMovie(${movie.id})">
@@ -231,6 +331,17 @@ function displaySavedMovies() {
             </div>
 
         `;
+
+        //Watch Button
+        const watchButton = movieCard.querySelector(".watch-btn");
+
+        watchButton.addEventListener("click", () => {
+
+            movie.watched = !movie.watched;
+            localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
+            displaySavedMovies();
+
+        });
 
         savedMoviesContainer.appendChild(movieCard);
 
@@ -258,3 +369,28 @@ displaySavedMovies();
 
 //Clear Watchlist Button Event
 clearWatchlistButton.addEventListener("click", clearWatchlist);
+
+//Filter Buttons
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        //Get filter value
+        currentFilter = button.dataset.filter;
+
+        //Remove active class
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove("active-filter");
+
+        }); 
+
+        //Add active class
+        button.classList.add("active-filter");
+
+        //Refresh Movies
+        displaySavedMovies();
+    
+    });
+    
+});
