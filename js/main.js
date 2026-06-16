@@ -62,18 +62,61 @@ function displayMovies(movies) {
 
 fetchTrendingMovies();
 
+//Latest Activity
+function loadActivities() {
 
+    const activityContainer = document.querySelector(".activity-container");
 
+    const activities = JSON.parse(localStorage.getItem("movieActivity")) || [];
 
+    if (activities.length === 0) {
 
+        activityContainer.innerHTML = `
 
+            <div class="activity-item">
 
-    
+                <i class="bi bi-info-circle-fill activity-icon"></i>
 
+                <div>
 
+                    <h4 class="activity-title">No activity yet</h4>
 
+                    <p class="activity-time">Start using MovieSphere to see your latest activity here.</p>
 
+                </div>
 
+            </div>
 
+        `;
 
+        return;
 
+    }
+
+    activityContainer.innerHTML = "";
+
+    activities.slice(0, 5).forEach(activity => {
+
+        activityContainer.innerHTML += `
+
+            <div class="activity-item">
+
+                <i class="bi bi-bookmark-check-fill activity-icon"></i>
+
+                <div> 
+
+                    <h4 class="activity-title">${activity.action}</h4>
+
+                    <p class="activity-time">${activity.time}</p>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+loadActivities();

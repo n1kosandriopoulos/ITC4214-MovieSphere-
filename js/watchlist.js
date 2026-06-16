@@ -173,6 +173,9 @@ function saveMovie(movieId) {
     //Refresh UI
     displaySavedMovies();
 
+    //Add activity to Latest Activity section
+    addActivity(`Added ${selectedMovie.title} to Watchlist`);
+
     alert("Movie saved!");
 
 }
@@ -183,11 +186,20 @@ function removeMovie(movieId) {
     //Get saved movies
     let savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || [];
 
+    const removedMovie = savedMovies.find(movie => movie.id === movieId);
+
     //Remove selected movie
     savedMovies = savedMovies.filter(movie => movie.id !== movieId);
 
     //Update localStorage
     localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
+
+    //Add activity to Latest Activity section
+    if (removedMovie) {
+
+        addActivity(`Removed ${removedMovie.title} from Watchlist`);
+
+    }
 
     //Refresh UI
     displaySavedMovies();
@@ -206,6 +218,9 @@ function clearWatchlist() {
         return;
 
     }
+
+    //Add activity to Latest Activity section
+    addActivity("Cleared Watchlist");
 
     //Clear localStorage
     localStorage.removeItem("savedMovies");
@@ -338,7 +353,23 @@ function displaySavedMovies() {
         watchButton.addEventListener("click", () => {
 
             movie.watched = !movie.watched;
+
+            if (movie.watched) {
+
+                //Add activity to Latest Activity section
+                addActivity(`Marked ${movie.title} as Watched`);
+
+            }
+
+            else {
+
+                //Add activity to Latest Activity section
+                addActivity(`Marked ${movie.title} as Unwatched`);
+
+            }
+
             localStorage.setItem("savedMovies", JSON.stringify(savedMovies));
+
             displaySavedMovies();
 
         });
@@ -346,6 +377,24 @@ function displaySavedMovies() {
         savedMoviesContainer.appendChild(movieCard);
 
     });
+
+}
+
+//Activity Tracker 
+function addActivity(action) {
+
+    let activities = JSON.parse(localStorage.getItem("movieActivity")) || [];
+
+    activities.unshift({
+
+        action: action,
+        time: new Date().toLocaleString()
+
+    });
+
+    activities = activities.slice(0, 5);
+
+    localStorage.setItem("movieActivity", JSON.stringify(activities));
 
 }
 
